@@ -7,6 +7,7 @@ import Item from './components/inventry_mgmt/Item';
 import UpdateItem from './components/inventry_mgmt/UpdateItem';
 import Order from './components/order_mgmt/Order';
 import UpdateOrder from './components/order_mgmt/UpdateOrder';
+import OrderView from './components/order_mgmt/OrderView';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/updateitem' element={<UpdateItem />}></Route>
           <Route path='/order' element={<Order />}></Route>
           <Route path='/updateorder' element={<UpdateOrder />}></Route>
+          <Route path='/orderview' element={<OrderView />}></Route>
         </Routes>
       </Router>
 
