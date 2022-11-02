@@ -1,10 +1,10 @@
-import React from "react"
-import { TextField, Button, Stack, Paper } from "@mui/material";
+import React ,{useEffect,useState}from "react"
+import {Button, Stack, Paper } from "@mui/material";
 import StickyHeadTable from "../Common/StickyHeadTable";
 
 
 function ViewInventry() {
-    return (
+return (
         <diV>
 
             <Stack direction={'row'} flex={1} sx={{ marginTop:2}}>
@@ -12,19 +12,12 @@ function ViewInventry() {
                 <Stack direction={'col'}>
                     <Paper variant="elevation" sx={{ padding: '20px', marginTop: '10px', backgroundColor: 'whitesmoke' }} >
                         <Stack spacing={2} direction={'row'}>
-                            <h2 style={{ fontFamily: 'sans-serif', color: 'black' }}>ITEM DETAILS</h2>
+                            <h2 style={{ fontFamily: 'sans-serif', color: 'black' }}>INVENTORY DETAILS</h2>
                         </Stack><br />
                         <div>
                             <StickyHeadTable/>
 
-                             
-
-
-                
-
-
-
-                        </div>
+                      </div>
                     </Paper>
                 </Stack>
                 <Stack direction={'col'} flex={1}></Stack>
