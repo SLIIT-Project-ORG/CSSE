@@ -38,6 +38,11 @@ const Item = new mongoose.Schema({
         type:String,
         required: true
 
+    },
+    total_price:{
+       
+        type:String,
+        required: true
     }
 
 });

@@ -11,11 +11,12 @@ router.route("/insert").post((req, res) => {
     let item_price = req.body.item_price
     let supplier_id= req.body.supplier_id
     let item_count = req.body.item_count
+    let total_price = req.body.total_price
    
 
     const itemobj = new IItem({
 
-      item_name,item_code,item_price,supplier_id,item_count,item_id
+      item_name,item_code,item_price,supplier_id,item_count,item_id,total_price
 
     });
 
@@ -68,11 +69,11 @@ router.route("/update/:id").put((req, res) => {
     let item_price = req.body.item_price
     let supplier_id= req.body.supplier_id
     let item_count = req.body.item_count
-
+    let total_price = req.body.total_price
 
     const itemobj = ({
 
-        item_name,item_code,item_price,supplier_id,item_count,item_id
+        item_name,item_code,item_price,supplier_id,item_count,item_id,total_price
 
  })
 
