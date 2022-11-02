@@ -11,8 +11,10 @@ app.use(bp.json());
 const PORT = process.env.PORT;
 
 const user = require("./routes/user_mgmt/users");
+const order = require("./routes/order_mgmt/orders");
 
 app.use("/user",user);
+app.use("/order",order);
 
 app.listen(PORT,()=>{
     console.log(`App is running on PORT `+ PORT)
