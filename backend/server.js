@@ -11,9 +11,13 @@ app.use(bp.json());
 const PORT = process.env.PORT;
 
 const user = require("./routes/user_mgmt/users");
+const item = require("./routes/inventry_management/Items");
+const inventory = require ("./routes/inventry_management/Inventrys");
 const order = require("./routes/order_mgmt/orders");
 
 app.use("/user",user);
+app.use("/item",item);
+app.use("/inventory",inventory);
 app.use("/order",order);
 
 app.listen(PORT,()=>{
