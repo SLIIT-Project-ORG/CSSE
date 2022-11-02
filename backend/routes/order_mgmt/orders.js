@@ -42,44 +42,44 @@ router.route("/:id").get(async (req, res) => {
         })
 })
 
-router.route("/count").post(async(req,res)=>{
+router.route("/count").post(async (req, res) => {
 
     let obj = req.body.items;
     let totalItem = 0;
     let len = obj.length;
 
-    for(var i=0; i < len; i++){
+    for (var i = 0; i < len; i++) {
         totalItem = totalItem + obj[i].quantity;
     }
     console.log("Count " + totalItem);
-    res.json({"totalItems":totalItem});
+    res.json({ "totalItems": totalItem });
 })
 
-router.route("/setStatus/:id/:status").put(async(req,res)=>{
+router.route("/setStatus/:id/:status").put(async (req, res) => {
 
     const id = req.params.id;
     const status = req.params.status;
 
-    Order.findByIdAndUpdate(id,{status:status})
-    .then(()=>{
-        res.json("Order " + id + " is " + status);
-    }).catch((err)=>{
-        res.json(err.message);
-    })
+    Order.findByIdAndUpdate(id, { status: status })
+        .then(() => {
+            res.json("Order " + id + " is " + status);
+        }).catch((err) => {
+            res.json(err.message);
+        })
 
 })
 
-router.route("/update/:id").put(async(req,res)=>{
+router.route("/update/:id").put(async (req, res) => {
 
     const id = req.params.id;
     const data = req.body;
 
-    Order.findByIdAndUpdate(id,data)
-    .then(()=>{
-        res.json("Order Updated Successfully");
-    }).catch((err)=>{
-        res.json(err.message);
-    })
+    Order.findByIdAndUpdate(id, data)
+        .then(() => {
+            res.json("Order Updated Successfully");
+        }).catch((err) => {
+            res.json(err.message);
+        })
 
 })
 
