@@ -26,8 +26,17 @@ const orderSchema = new Schema({
     note:{
         type:String
     },
-    status:{
+    staffStatus:{
         type:String,
+        default:"pending"
+    },
+    supplierStatus:{
+        type:String,
+        default:"pending"
+    },
+    totalAmount:{
+        type:String,
+        required:true
     },
     createdAt:{
         type:Date,
