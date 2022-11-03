@@ -6,6 +6,13 @@ router.route("/create").post(async (req, res) => {
     const orderReq = req.body;
 
     if (orderReq.siteId != null && orderReq.siteManagerId != null && orderReq.wareHouseId != null) {
+
+        let total = parseFloat(orderReq.totalAmount);
+
+        if (total <= 100000) {
+            orderReq.staffStatus = "approve";
+        }
+
         await Order.create(orderReq)
             .then((data) => {
                 res.json({ message: "Order created successfully", data: data });
@@ -55,18 +62,18 @@ router.route("/count").post(async (req, res) => {
     res.json({ "totalItems": totalItem });
 })
 
-router.route("/setStatus/:id/:status").put(async (req, res) => {
+router.route("/setStatus/:id/:staffStatus/:supplierStatus").put(async (req, res) => {
 
     const id = req.params.id;
-    const status = req.params.status;
+    const staffStatus = req.params.staffStatus;
+    const supplierStatus = req.params.supplierStatus;
 
-    Order.findByIdAndUpdate(id, { status: status })
+    Order.findByIdAndUpdate(id, { staffStatus: staffStatus, supplierStatus: supplierStatus })
         .then(() => {
-            res.json("Order " + id + " is " + status);
+            res.json("Order " + id + " staff status is " + staffStatus + " and supplier status is " + supplierStatus);
         }).catch((err) => {
             res.json(err.message);
         })
-
 })
 
 router.route("/update/:id").put(async (req, res) => {
@@ -81,6 +88,33 @@ router.route("/update/:id").put(async (req, res) => {
             res.json(err.message);
         })
 
+})
+
+
+router.route("/getByStaffStatus/:staffStatus").get(async (req, res) => {
+    Order.find({
+        staffStatus:req.params.staffStatus,
+    })
+        .then((data) => {
+            res.json({ data: data });
+            console.log({ data: data });
+        }).catch((err) => {
+            res.json(err.message);
+            console.log(err.message);
+        })
+})
+
+router.route("/getBySupplierStatus/:supplierStatus").get(async (req, res) => {
+    Order.find({
+        supplierStatus:req.params.supplierStatus,
+    })
+        .then((data) => {
+            res.json({ data: data });
+            console.log({ data: data });
+        }).catch((err) => {
+            res.json(err.message);
+            console.log(err.message);
+        })
 })
 
 module.exports = router;
