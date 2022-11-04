@@ -1,6 +1,6 @@
 import React,{useState} from "react"
 import axios from "axios";
-import "../styles/Admin.css";
+
 
 export default function AddSiteDetails(){
 
@@ -54,7 +54,7 @@ export default function AddSiteDetails(){
           
           <div className="col-md-4">
             <label for="name" className="form-label">Site Name</label>
-            <input type="number" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
+            <input type="text" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
              onChange={(e)=>{
                 setsitename(e.target.value)
 
@@ -65,7 +65,7 @@ export default function AddSiteDetails(){
 
           <div className="col-md-4">
             <label for="type_ID" className="form-label">Site Location</label>
-            <input type="number" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
+            <input type="text" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
             onChange={(e)=>{
                 setsite_location(e.target.value)
 
@@ -79,7 +79,7 @@ export default function AddSiteDetails(){
           </div>
           <div className="col-md-4">
             <label for="type_ID" className="form-label">Site Manager Name</label>
-            <input type="number" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
+            <input type="text" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
             onChange={(e)=>{
                 setsiteManager(e.target.value)
 
@@ -105,7 +105,7 @@ export default function AddSiteDetails(){
           </div>
           <div className="col-md-4">
             <label for="con_type" className="form-label">Construction Type</label>
-              <input type="date" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
+              <input type="text" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
               onChange={(e)=>{
                 setcon_type(e.target.value)
             }}/>

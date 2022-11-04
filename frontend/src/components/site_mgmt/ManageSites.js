@@ -43,7 +43,7 @@ function SitedetailsManagement() {
         <br></br>
         <br></br>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> + Add New Fuel Details</a>
+            <a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> + Add New Site Details</a>
 
 
         </div>
@@ -74,7 +74,7 @@ function SitedetailsManagement() {
                                             <td style={{ width: "100px" }}>{val.siteManager}</td>
                                             <td style={{ width: "100px" }}>{val.con_type}</td>
                                             <td style={{ width: "100px" }}>{val.emp_num}</td>
-                                            <td style={{ width: "100px" }}>{val.description}</td>
+
                                             <td style={{ width: "100px" }}><a href={`/updatesitedetails/` + val._id} className='btn btn-warning'>Update</a>
                                                 <Popup
                                                     trigger={<button className="btn btn-danger"> Delete </button>}
