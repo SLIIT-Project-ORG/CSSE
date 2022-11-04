@@ -14,7 +14,7 @@ import SignUp from './components/user_mgmt/Register';
 import ResponsiveAppBar from './components/user_mgmt/header';
 import SitedetailsManagement from './components/site_mgmt/ManageSites';
 import AddSiteDetails from './components/site_mgmt/AddSite';
-
+import UpdateSiteDetails from './components/site_mgmt/UpdateSiteDetails';
 
 function App() {
   return (
@@ -36,6 +36,7 @@ function App() {
 
           <Route path='/addsite' element={<AddSiteDetails />}></Route>
           <Route path='/managesite' element={<SitedetailsManagement />}></Route>
+          <Route path='/updatesitedetails/:id' element={<UpdateSiteDetails />}></Route>
 
 
         </Routes>
