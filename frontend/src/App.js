@@ -12,6 +12,8 @@ import ViewInventry from './components/inventry_mgmt/ViewInventry';
 import SignIn from './components/user_mgmt/Login';
 import SignUp from './components/user_mgmt/Register';
 import ResponsiveAppBar from './components/user_mgmt/header';
+import SitedetailsManagement from './components/site_mgmt/ManageSites';
+import AddSiteDetails from './components/site_mgmt/AddSite';
 
 
 function App() {
@@ -31,6 +33,10 @@ function App() {
           <Route path='/orderview' element={<OrderView />}></Route>
           <Route path='/viewinventry' element={<ViewInventry />}></Route>
           <Route path='/' element={<ResponsiveAppBar />}></Route>
+
+          <Route path='/addsite' element={<AddSiteDetails />}></Route>
+          <Route path='/managesite' element={<SitedetailsManagement />}></Route>
+
 
         </Routes>
       </Router>
