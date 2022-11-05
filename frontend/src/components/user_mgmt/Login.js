@@ -12,7 +12,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Paper } from '@mui/material';
+import { Alert, Paper } from '@mui/material';
+import axios from 'axios';
 
 function Copyright(props) {
   return (
@@ -30,85 +31,121 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+
+
+  const token = localStorage.token;
+
+  if (token) {
+    window.location.href = "/dashboard";
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get('email'),
+      username: data.get('username'),
       password: data.get('password'),
     });
+
+    axios.post("http://localhost:4000/user/signin", {
+      username: data.get('username'),
+      password: data.get('password'),
+    })
+      .then((res) => {
+        alert(res.data.message);
+        localStorage.setItem("token", res.data.data);
+        if (res.data.message === "Login Successful") {
+
+          if (res.data.usertype === "Admin") {
+            window.location.href = "/admindashboard";
+          }
+          else if (res.data.usertype === "Staff") {
+            window.location.href = "/staffdashboard";
+          } else if (res.data.usertype === "SiteManager") {
+            window.location.href = "/sitemanagerdashboard";
+          } else {
+            window.location.href = "/supplierdashboard";
+          }
+        }
+        else {
+          window.location.href = "/login";
+        }
+      })
+      .catch((err) => {
+        console.log(err.message);
+      })
+
   };
 
   return (
-    <Paper ariant="elevation" sx={{ padding: '20px', marginTop: '66px', backgroundColor:'ghostwhite' ,marginLeft:50,marginRight:50}}>
+    <Paper ariant="elevation" sx={{ padding: '20px', marginTop: '66px', backgroundColor: 'ghostwhite', marginLeft: 50, marginRight: 50 }}>
       <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <Box
+            sx={{
+              marginTop: 8,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              Sign in
+            </Typography>
+            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="username"
+                label="Username"
+                name="username"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+              />
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                label="Remember me"
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Sign In
+              </Button>
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    Forgot password?
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Link href="/signup" variant="body2">
+                    {"Don't have an account? Sign Up"}
+                  </Link>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Link href="/signup" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
+            </Box>
           </Box>
-        </Box>
-       
-      </Container>
-    </ThemeProvider>
+
+        </Container>
+      </ThemeProvider>
     </Paper>
-    
+
   );
 }

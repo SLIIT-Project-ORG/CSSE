@@ -11,6 +11,10 @@ const siteSchema = new Schema({
         type:String,
         required:true
     },
+    site_id:{
+        type:String,
+        required:true
+    },
     siteManager:{
         type:String,
         required:true

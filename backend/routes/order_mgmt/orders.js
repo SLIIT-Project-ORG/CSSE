@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const Order = require("../../models/order_mgmt/Order");
+const Site = require("../../models/Site_mgmt/Site");
+const User = require("../../models/user_mgmt/User");
 
 router.route("/create").post(async (req, res) => {
 
@@ -116,5 +118,40 @@ router.route("/getBySupplierStatus/:supplierStatus").get(async (req, res) => {
             console.log(err.message);
         })
 })
+
+router.route("/getBySupplierStatusAndStaffStatus/:supplierStatus/:staffStatus").get(async (req, res) => {
+    Order.find({
+        supplierStatus:req.params.supplierStatus,
+        staffStatus:req.params.staffStatus
+    })
+        .then((data) => {
+            res.json({ data: data });
+            console.log({ data: data });
+        }).catch((err) => {
+            res.json(err.message);
+            console.log(err.message);
+        })
+})
+
+// router.route("/orderWithIdData").get(async (req, res) => {
+
+//     const user = [];
+//     const site = [];
+
+//     Order.find()
+//         .then(async(data) => {
+
+//             data.forEach(d => {
+//                 // user.push(User.findOne({userid:d.siteManagerId}));
+//                 site.push(Site.findOne({site_id:d.siteId}));
+//             });
+
+//             res.json({ data: data,user:user,site:site});
+//             console.log({ data: data });
+//         }).catch((err) => {
+//             res.json(err.message);
+//             console.log(err.message);
+//         })
+// })
 
 module.exports = router;

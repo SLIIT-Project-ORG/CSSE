@@ -42,6 +42,10 @@ const userSchema = new Schema({
     createdAt:{
         type:Date,
         default:Date.now()
+    },
+    userid:{
+        type:String,
+        required:true
     }
 })
 

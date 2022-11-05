@@ -15,10 +15,6 @@ const orderSchema = new Schema({
         type:String,
         required:true
     },
-    wareHouseId:{
-        type:String,
-        required:true
-    },
     items:{
         type:Array,
         required:true
