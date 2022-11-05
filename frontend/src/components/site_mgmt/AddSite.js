@@ -1,6 +1,6 @@
 import React,{useState} from "react"
 import axios from "axios";
-
+import ResponsiveAppBar from '../../components/user_mgmt/header';
 
 export default function AddSiteDetails(){
 
@@ -35,6 +35,7 @@ export default function AddSiteDetails(){
     return(
 
 <div >
+  <ResponsiveAppBar></ResponsiveAppBar>
 <div class="p-5 mb-4 bg-dark rounded-3">
       <div class="container-fluid py-5">
         <h1 class="display-5 text-white fw-bold"> Admin: ADD Site Details</h1>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import { useNavigate, useParams } from "react-router-dom";
-
+import ResponsiveAppBar from '../../components/user_mgmt/header';
 
 export const withRouter = (WrappedComponent) => (props) => {
   const params = useParams();
@@ -112,7 +112,7 @@ class UpdateSiteDetails extends Component {
   render() {
     return (
         <div>
-
+ <ResponsiveAppBar></ResponsiveAppBar>
                 <header class="bg-dark py-5">
                   <div class="container px-4 px-lg-5 my-5">
                     <div class="text-center text-white">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Popup from 'reactjs-popup';
+import ResponsiveAppBar from '../../components/user_mgmt/header';
 function SitedetailsManagement() {
 
     const [sitedetails, setsitedetails] = useState([]);
@@ -31,7 +32,7 @@ function SitedetailsManagement() {
 
 
         <div className='container-table100'>
-
+ <ResponsiveAppBar></ResponsiveAppBar>
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
@@ -43,7 +44,7 @@ function SitedetailsManagement() {
         <br></br>
         <br></br>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> + Add New Site Details</a>
+            <a href="/addsite" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> + Add New Site Details</a>
 
 
         </div>
