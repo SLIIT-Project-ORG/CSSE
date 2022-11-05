@@ -19,7 +19,7 @@ import UpdateWManagement from './components/inventry_mgmt/UpdateWarehouse';
 import SitedetailsManagement from './components/site_mgmt/ManageSites';
 import AddSiteDetails from './components/site_mgmt/AddSite';
 import UpdateSiteDetails from './components/site_mgmt/UpdateSiteDetails';
-
+import InvoiceManagement from './components/Invoice_mgmt/ManageInvoice';
 function App() {
   return (
     <div className="App">
@@ -58,7 +58,7 @@ function App() {
           <Route path='/addsite' element={<AddSiteDetails />}></Route>
           <Route path='/managesite' element={<SitedetailsManagement />}></Route>
           <Route path='/updatesitedetails/:id' element={<UpdateSiteDetails />}></Route>
-
+          <Route path='/invoice' element={<InvoiceManagement />}></Route>
 
         </Routes>
       </Router>
@@ -66,5 +66,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
