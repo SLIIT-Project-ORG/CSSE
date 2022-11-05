@@ -66,8 +66,7 @@ export default function SignIn() {
           } else {
             window.location.href = "/supplierdashboard";
           }
-        }
-        else {
+        }else {
           window.location.href = "/login";
         }
       })
