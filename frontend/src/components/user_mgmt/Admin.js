@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../../styles/Admin.css';
 import admin from  '../../images/admin.jpg'
 import AdminHeader from './AdminHeader';
+import ViewInventry from '../inventry_mgmt/ViewInventry';
 
 
 export default function Admin() {
@@ -33,6 +34,7 @@ export default function Admin() {
                     </div>
                     <div className="col-md-10 col-sm-9 display-table-cell v-align">
                         <AdminHeader/>
+                     
 
                         <div className="row mb-4">
                            

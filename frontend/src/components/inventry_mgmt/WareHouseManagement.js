@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card } from '@mui/material';
-import { borderColor } from '@mui/system';
+import { Button} from '@mui/system';
 
 export default function WManagement() {
 
@@ -34,7 +34,7 @@ export default function WManagement() {
 
 
     return (
-        <Card style={{width:900, height:600  ,marginLeft:300, marginRight:300, marginTop:100}}>
+        <Card style={{width:1000, height:450  ,marginLeft:300, marginRight:300, marginTop:100}}>
         <div>
             <div>
             <div class="container">
@@ -42,7 +42,7 @@ export default function WManagement() {
                         <div class="row ">
                         <div class="col-sm-3 mt-5 mb-4 text-dark" >
                                 <div className="search">
-                                    <form class="form-inline">
+                                    <form class="form-inline" >
                                         <input class=" mr-sm-2 border border-dark" type="search" placeholder="Search" aria-label="Search" name="searchTerm"
 
                                             onChange={(e) => {
@@ -122,6 +122,7 @@ export default function WManagement() {
                                 </table>
 
                             </div>
+                           
                         </div>
 
 

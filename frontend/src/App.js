@@ -54,7 +54,7 @@ function App() {
           <Route path='/viewinventry' element={<ViewInventry />}></Route>
 
           <Route path='/' element={<ResponsiveAppBar />}></Route>
-          <Route path='/Admin' element={<Admin />}></Route>
+          <Route path='/admindashboard' element={<Admin />}></Route>
         
 
                   
