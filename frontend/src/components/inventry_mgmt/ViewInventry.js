@@ -1,6 +1,7 @@
-import React ,{useEffect,useState}from "react"
+import React from "react"
 import {Button, Stack, Paper } from "@mui/material";
-import StickyHeadTable from "../Common/StickyHeadTable";
+import SimpleAccordion from "./WarehouseView";
+
 
 
 function ViewInventry() {
@@ -14,17 +15,14 @@ return (
                         <Stack spacing={2} direction={'row'}>
                             <h2 style={{ fontFamily: 'sans-serif', color: 'black' }}>INVENTORY DETAILS</h2>
                         </Stack><br />
-                        <div>
-                            <StickyHeadTable/>
-
-                      </div>
+                        <SimpleAccordion/>
                     </Paper>
                 </Stack>
                 <Stack direction={'col'} flex={1}></Stack>
             </Stack>
             <Stack spacing={1} >
 
-                <Button type="submit" size="medium" variant="contained" color='warning' sx={{ width: '15%', marginLeft: 120, marginTop:2 }}>Back</Button>
+                <Button type="submit" size="medium" variant="contained" color='warning' sx={{ width: '15%', marginLeft: 120, marginTop:2 }} onClick={() => window.location.href = "/warehouse"}>Back</Button>
             </Stack>
 
 

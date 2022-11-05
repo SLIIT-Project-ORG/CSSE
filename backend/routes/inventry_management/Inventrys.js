@@ -5,7 +5,7 @@ const Iinventory = require("../../models/inventry_management/Inventry");
 //insert
 router.route("/insert").post((req, res) => {
 
-    let inventory_id = req.body.inventory_id
+    let warehouse_id = req.body.warehouse_id
     let inventory_type = req.body.inventory_type
     let inventory_location = req.body.inventory_location
     let inventory_name= req.body.inventory_name
@@ -14,7 +14,7 @@ router.route("/insert").post((req, res) => {
 
     const inventryobj = new Iinventory({
 
-       inventory_id,inventory_type,inventory_location,inventory_name,inventory_description
+       warehouse_id,inventory_type,inventory_location,inventory_name,inventory_description
 
     });
 
@@ -61,7 +61,7 @@ router.route("/update/:id").put((req, res) => {
 
     const iid = req.params.id;
 
-    let inventory_id = req.body.inventory_id
+    let warehouse_id = req.body.warehouse_id
     let inventory_type =req.body.inventory_type
     let inventory_location =req.body.inventory_location
     let inventory_name=req.body.inventory_name
@@ -70,7 +70,7 @@ router.route("/update/:id").put((req, res) => {
 
     const inventryobj = ({
 
-        inventory_id,inventory_type,inventory_location,inventory_name,inventory_description
+        warehouse_id,inventory_type,inventory_location,inventory_name,inventory_description
 
  })
 
@@ -94,5 +94,21 @@ router.route("/:id").get((req, res) => {
     })
 
 });
+
+router.route("/getInventoryByWarehouse/:id").get((req,res)=>{
+
+    let id = req.params.id;
+
+    Iinventory.find({
+        warehouse_id:id
+    })
+    .then((data)=>{
+        res.json(data);
+    })
+    .catch((err)=>{
+        res.json(err.message);
+    })
+
+})
 
 module.exports = router;
