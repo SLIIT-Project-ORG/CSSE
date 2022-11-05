@@ -19,7 +19,7 @@ li,ul{
   display: table;
 }
 .del{
-color:rgb(99, 136, 236);
+color:rgb(14, 99, 100);
 }
 
 .badd{
@@ -28,7 +28,7 @@ background-color:rgb(87, 87, 236);
 
 }
 .bbdd{
-color:rgb(232, 236, 238);
+color:rgb(238, 232, 232);
 background-color:rgb(6, 32, 150);
 }
 .ba{
@@ -41,16 +41,12 @@ text-align: right;
 .ab{
 text-align: right;
 }
-.container{
-text-align: left;
-background-color:rgba(85, 167, 215, 0.849);
 
-}
 
 .login-header {
   display: inline-block;
   width: 100%;
-  background: #6854b2;
+  background: #ecdfdf;
 }
 
 .login-signup {
