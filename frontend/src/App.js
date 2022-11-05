@@ -19,6 +19,8 @@ import UpdateWManagement from './components/inventry_mgmt/UpdateWarehouse';
 import SitedetailsManagement from './components/site_mgmt/ManageSites';
 import AddSiteDetails from './components/site_mgmt/AddSite';
 import UpdateSiteDetails from './components/site_mgmt/UpdateSiteDetails';
+import Admin from './components/user_mgmt/Admin';
+
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
         <Route path='/viewinventry' element={<ViewInventry />}></Route>
         <Route path='/wmanagement' element={<WManagement />}></Route>
         <Route path='/updatewmanagement/:id' element={<UpdateWManagement />}></Route>
+        
         
           
           <Route path='/order' element={<Order />}></Route>
@@ -51,6 +54,7 @@ function App() {
           <Route path='/viewinventry' element={<ViewInventry />}></Route>
 
           <Route path='/' element={<ResponsiveAppBar />}></Route>
+          <Route path='/Admin' element={<Admin />}></Route>
         
 
                   
@@ -59,6 +63,7 @@ function App() {
           <Route path='/managesite' element={<SitedetailsManagement />}></Route>
           <Route path='/updatesitedetails/:id' element={<UpdateSiteDetails />}></Route>
 
+          
 
         </Routes>
       </Router>

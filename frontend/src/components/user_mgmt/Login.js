@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Paper,Image } from '@mui/material';
 import loginImage from '../../images/LoginImagewallpaper.png'
 import { Stack } from '@mui/system';
+import HomeImage from '../../images/home.png'
 
 function Copyright(props) {
   return (
@@ -44,22 +45,25 @@ export default function SignIn() {
   };
 
   return (
-    
-    <Paper ariant="elevation" sx={{ padding: '10px', marginTop: '10px', backgroundColor:'ghostwhite' ,marginLeft:60,marginRight:60}}>
+    <Stack>
+    <Paper  ariant="elevation" sx={{ padding: '10px', marginTop: '10px', backgroundColor:'ghostwhite' ,marginLeft:60,marginRight:60}}>
+      
       <ThemeProvider theme={theme} >
       
       <Container component="main" maxWidth="xs">
         <CssBaseline />
      
         <Box
+       
           sx={{
             marginTop: 4,
            
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+           
           }}
-        >
+        > 
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
@@ -67,7 +71,7 @@ export default function SignIn() {
             SIGN IN
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-          <img src={loginImage} width="400px" />
+          <img src={loginImage} width="300px" />
             <TextField
               margin="normal"
               required
@@ -118,7 +122,8 @@ export default function SignIn() {
        
       </Container>
     </ThemeProvider>
+   
     </Paper>
-    
+    </Stack>
   );
 }
