@@ -63,11 +63,11 @@ export default function SignUp() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
-                  name="firstName"
+                  name="fullname"
                   required
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="fullname"
+                  label="Full Name"
                   autoFocus
                 />
               </Grid>
@@ -75,10 +75,20 @@ export default function SignUp() {
                 <TextField
                   required
                   fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
+                  id="usertype"
+                  label="User Type"
+                  name="usertype"
+                  autoComplete="User Type"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="username"
+                  label="User Name"
+                  name="username"
+                  autoComplete="User Name"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -86,9 +96,9 @@ export default function SignUp() {
                   required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label="Email"
                   name="email"
-                  autoComplete="email"
+                  autoComplete="Email"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -100,6 +110,17 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="address"
+                  label="Address"
+                  type="address"
+                  id="address"
+                  autoComplete="Address"
                 />
               </Grid>
               <Grid item xs={12}>

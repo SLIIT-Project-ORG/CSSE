@@ -13,6 +13,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { BottomNavigation } from '@mui/material';
+import HomeImage from '../../images/home.png'
+import HomeImage1 from '../../images/home1.png'
+import { Stack } from '@mui/system';
 
 const pages = ['Contact', 'AboutUs', 'Login'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -37,7 +40,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    
+    <Stack>
     <AppBar position="static" sx={{backgroundColor:'darkblue'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters >
@@ -55,6 +58,7 @@ function ResponsiveAppBar() {
               letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
+              
             }}
           >
             Procument Management System
@@ -68,6 +72,7 @@ function ResponsiveAppBar() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              
              
             >
               <MenuIcon />
@@ -78,6 +83,7 @@ function ResponsiveAppBar() {
               anchorOrigin={{
                 vertical: 'bottom',
                 horizontal: 'left',
+                
               }}
               keepMounted
               transformOrigin={{
@@ -91,7 +97,7 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={handleCloseNavMenu} >
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -112,6 +118,7 @@ function ResponsiveAppBar() {
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
+             
               
             }}
           >
@@ -162,6 +169,14 @@ function ResponsiveAppBar() {
       </Container>
       
     </AppBar>
+    
+    <img src={HomeImage} width="880px" height='600px' marginTop='5'/>
+    <Stack style={{marginLeft:'700px' ,marginTop:'-600px'}}>
+    <img src={HomeImage1}   width="835px" height='600px'  />
+    </Stack>
+   
+    </Stack>
+   
    
 
   );

@@ -1,31 +1,31 @@
 const mongoose = require("mongoose");
 
-const Inventry = new mongoose.Schema({
+const warehouse = new mongoose.Schema({
 
     warehouse_id: {
 
         type: String,
         required: true
     },
-    
-    inventory_type: {
+
+    warehouse_name: {
 
         type: String,
         required: true
     },
-    inventory_location: {
-
-        type: String,
-        required: true
-    },
-
-    inventory_name: {
+    warehouse_address: {
 
         type: String,
         required: true
     },
 
-    inventory_description: {
+    warehouse_company: {
+
+        type: String,
+        required: true
+    },
+
+    warehouse_contactno: {
 
         type: String,
         required: true
@@ -33,5 +33,6 @@ const Inventry = new mongoose.Schema({
     },
 
 });
-const Iinventory = mongoose.model("Inventry", Inventry);
-module.exports = Iinventory;
+const Wwarehouse = mongoose.model("WareHouse", warehouse);
+module.exports = Wwarehouse;
+
