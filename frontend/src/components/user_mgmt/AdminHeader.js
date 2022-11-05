@@ -21,13 +21,13 @@ function AdminHeader() {
               <div className="collapse navbar-collapse" id="navbarResponsive" >
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item active" style={{marginLeft:"750px"}}>
-                    <a  style={{color:'black'}} className="nav-link" href="/">Home</a>
+                    <a  className="nav-link" href="/">Home</a>
                   </li>
                   <li className="nav-item">
-                    <a  style={{color:'black'}}  className="nav-link" href="/signin">Signin</a>
+                    <a    className="nav-link" href="/signin">Signin</a>
                   </li>
                   <li className="nav-item">
-                    <a  style={{color:'black'}}  className="nav-link" href="/">About Us</a>
+                    <a className="nav-link" href="/">About Us</a>
                   </li>
                 </ul>
               </div>

@@ -151,11 +151,11 @@
   }
   
   .bg-dark {
-    background-color: rgb(141, 106, 179) !important;
+    background-color: rgb(215, 204, 226) !important;
   }
   
   .mx-background-top-linear {
-    background: -webkit-linear-gradient(45deg, #1d1a5f 48%, #1b1e21 48%);
-    background: -webkit-linear-gradient(left #1d1a5f  48%, #1b1e21 48%);
-    background: linear-gradient(45deg, #1d1a5f 48%, #1b1e21 48%);
+    background: -webkit-linear-gradient(45deg, #659bd2 48%, #1b1e21 48%);
+    background: -webkit-linear-gradient(left #659bd2  48%, #1b1e21 48%);
+    background: linear-gradient(45deg, #659bd2 48%, #1b1e21 48%);
   }
