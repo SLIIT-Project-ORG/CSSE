@@ -12,10 +12,12 @@ import ResponsiveAppBar from './components/user_mgmt/header';
 import SitedetailsManagement from './components/site_mgmt/ManageSites';
 import AddSiteDetails from './components/site_mgmt/AddSite';
 import UpdateSiteDetails from './components/site_mgmt/UpdateSiteDetails';
+
 import InvoiceManagement from './components/Invoice_mgmt/ManageInvoice';
 import Dashboard from './components/user_mgmt/Dashboard';
 import StaffOrderView from './components/order_mgmt/StaffOrderView';
 import Order from './components/order_mgmt/PurchaseOrder';
+import Admin from './components/user_mgmt/Admin';
 
 function App() {
   return (
@@ -34,6 +36,15 @@ function App() {
           <Route path='/viewinventry' element={<ViewInventry />}></Route>
           {/* <Route path='/wmanagement' element={<WManagement />}></Route> */}
           {/* <Route path='/updatewmanagement/:id' element={<UpdateWManagement />}></Route> */}
+       
+        {/* <Route path='/' element={<ResponsiveAppBar />}></Route> */}
+        {/* <Route path='/warehouse' element={<WareHouse />}></Route> */}
+        <Route path='/viewinventry' element={<ViewInventry />}></Route>
+        {/* <Route path='/wmanagement' element={<WManagement />}></Route> */}
+        {/* <Route path='/updatewmanagement/:id' element={<UpdateWManagement />}></Route> */}
+        
+          
+          {/* <Route path='/order' element={<Order />}></Route> */}
 
           <Route path='/updateorder' element={<UpdateOrder />}></Route>
 
@@ -45,6 +56,19 @@ function App() {
           <Route path='/siteManagerOrderView' element={<SiteManagerOrderView />}></Route>
           <Route path='/viewinventry' element={<ViewInventry />}></Route>
           <Route path='/purchaseOrder' element={<Order/>}></Route>
+
+          <Route path='/' element={<ResponsiveAppBar />}></Route>
+          <Route path='/admindashboard' element={<Admin />}></Route>
+        
+
+                  
+
+          <Route path='/addsite' element={<AddSiteDetails />}></Route>
+          <Route path='/managesite' element={<SitedetailsManagement />}></Route>
+          <Route path='/updatesitedetails/:id' element={<UpdateSiteDetails />}></Route>
+
+          
+
 
         </Routes>
       </Router>

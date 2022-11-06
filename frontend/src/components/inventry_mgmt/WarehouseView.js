@@ -44,17 +44,17 @@ export default function SimpleAccordion() {
       {
         warehouseList.map((value) => {
           return (
-           <Box sx={{height:'400',width:1000 }}>
+           <Box sx={{height:'350',width:900 }}>
             <Accordion>
               <AccordionSummary sx={{ width: 900 }} onClick={() => setId(value.warehouse_id)}
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
-                <Typography flex={1}>{value.warehouse_name}</Typography>
+                <Typography   style={{color:'blue' ,fontWeight:'bold'}} flex={1}>{value.warehouse_name}</Typography>
 
-                <Typography flex={1} >{value.warehouse_address}</Typography>
-                <Typography flex={1} >{value.warehouse_company}</Typography>
+                <Typography  style={{color:'blue' ,fontWeight:'bold'}} flex={1} >{value.warehouse_address}</Typography>
+                <Typography  style={{color:'blue' ,fontWeight:'bold'}}flex={1} >{value.warehouse_company}</Typography>
 
               </AccordionSummary>
               <AccordionDetails>
@@ -76,10 +76,10 @@ export default function SimpleAccordion() {
                           key={row.name}
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
-                          <TableCell align="right">{row.inventory_name}</TableCell>
-                          <TableCell align="right">{row.inventory_type}</TableCell>
-                          <TableCell align="right">{row.inventory_location}</TableCell>
-                          <TableCell align="right">{row.inventory_description}</TableCell>
+                          <TableCell sx={{ fontWeight: 'bold', backgroundColor:'lightgray' }}>{row.inventory_name}</TableCell>
+                          <TableCell sx={{ fontWeight: 'bold', backgroundColor:'lightgray' }}>{row.inventory_type}</TableCell>
+                          <TableCell sx={{ fontWeight: 'bold', backgroundColor:'lightgray' }}>{row.inventory_location}</TableCell>
+                          <TableCell sx={{ fontWeight: 'bold', backgroundColor:'lightgray' }}>{row.inventory_description}</TableCell>
                         </TableRow>
                       ))}
                     </TableBody>

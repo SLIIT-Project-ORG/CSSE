@@ -16,6 +16,7 @@ import { BottomNavigation } from '@mui/material';
 import HomeImage from '../../images/home.png'
 import HomeImage1 from '../../images/home1.png'
 import { Stack } from '@mui/system';
+import Footer from './Footer';
 
 const pages = ['Contact', 'AboutUs', 'Login'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -174,7 +175,7 @@ function ResponsiveAppBar() {
     <Stack style={{marginLeft:'700px' ,marginTop:'-600px'}}>
     <img src={HomeImage1}   width="835px" height='600px'  />
     </Stack>
-   
+   <Footer/>
     </Stack>
    
    
