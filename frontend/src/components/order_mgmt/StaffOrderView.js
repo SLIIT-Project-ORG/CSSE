@@ -45,7 +45,7 @@ export default function StaffOrderView() {
                                 <TableCell sx={{ color: 'white', fontWeight: 'bold' }}>ACTIONS</TableCell>
                             </TableRow>
                         </TableHead>
-                        <TableBody sx={{ height: 300 }}>
+                        <TableBody>
                             {rows.map((row) => (
 
                                 <TableRow
