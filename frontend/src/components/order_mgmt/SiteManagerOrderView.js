@@ -54,7 +54,7 @@ export default function OrderView() {
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
                                         <TableCell>{row.siteManagerId}</TableCell>
-                                        <TableCell>{row.site_id}</TableCell>
+                                        <TableCell>{row.siteId}</TableCell>
                                         <TableCell>{row.supplierId}</TableCell>
                                         <TableCell>{row.note}</TableCell>
                                         <TableCell>{row.totalAmount}</TableCell>

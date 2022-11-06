@@ -47,7 +47,7 @@ router.route("/signin").post(async (req, res) => {
 
         if (validPassword) {
             const token = dbuser.generateAuthToken();
-            res.json({ 'message': 'Login Successful', 'data': token, 'usertype': dbuser.usertype });
+            res.json({ 'message': 'Login Successful', 'data': token, 'usertype': dbuser.usertype,'userid':dbuser._id });
             console.log({ 'message': 'Login Successful', 'data': token, 'usertype': dbuser.usertype })
         } else {
             res.json({ 'message': 'Username or Password invalided', 'data': '' });
@@ -73,6 +73,17 @@ router.route("/:id").get((req,res)=>{
         res.json(data);
     })
     .catch((err)=>{
+        res.json(err.message);
+    })
+})
+
+router.route("/usertype/:usertype").get((req,res)=>{
+    User.find({
+        usertype:req.params.usertype
+    })
+    .then((data)=>{
+        res.json(data);
+    }).catch((err)=>{
         res.json(err.message);
     })
 })
