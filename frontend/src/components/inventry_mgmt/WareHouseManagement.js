@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card } from '@mui/material';
 import { Button} from '@mui/system';
+import WareHouseReporttView from './WarehouseReportView';
 
 export default function WManagement() {
 
@@ -21,6 +22,7 @@ export default function WManagement() {
             })
     }, [])
 
+    //delete user
 
     function deletewarehouse(id) {
         axios.delete(`http://localhost:4000/warehouse/delete/${id}`).then(() => {
@@ -35,14 +37,19 @@ export default function WManagement() {
 
     return (
         <Card style={{width:1000, height:450  ,marginLeft:300, marginRight:300, marginTop:100}}>
+           
         <div>
             <div>
+           
             <div class="container">
                     <div className="crud shadow-lg p-3 mb-5 mt-5 bg-body  color-dark">
+                   
                         <div class="row ">
                         <div class="col-sm-3 mt-5 mb-4 text-dark" >
+                      
                                 <div className="search">
                                     <form class="form-inline" >
+                                  
                                         <input class=" mr-sm-2 border border-dark" type="search" placeholder="Search" aria-label="Search" name="searchTerm"
 
                                             onChange={(e) => {
@@ -51,6 +58,7 @@ export default function WManagement() {
 
                                             }}
                                         />
+                                         <WareHouseReporttView/>
 
 
                                     </form>
@@ -63,6 +71,7 @@ export default function WManagement() {
             </div>
                         </div>
                         <div class="row">
+                        
                             <div class="table-responsive">
 
                                 <table     class="table table-striped table-hover table-bordered" style={{ 'overflow': 'scroll', 'width': '900px',borderColor:'black',backgroundColor:'ghostwhite' }}>
@@ -121,6 +130,7 @@ export default function WManagement() {
                                     </tbody>
                                 </table>
 
+                               
                             </div>
                            
                         </div>
