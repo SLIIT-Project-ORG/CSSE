@@ -44,6 +44,11 @@ function App() {
           <Route path='/siteManagerOrderView' element={<SiteManagerOrderView/>}></Route>
           <Route path='/viewinventry' element={<ViewInventry />}></Route>
 
+          <Route path='/managesite' element={<SitedetailsManagement />}></Route>
+          <Route path='/addsite' element={<AddSiteDetails />}></Route>
+          <Route path='/updatesitedetails/:id' element={<UpdateSiteDetails/>}></Route>
+          <Route path='/invoice' element={<InvoiceManagement/>}></Route>
+
         </Routes>
       </Router>
 
