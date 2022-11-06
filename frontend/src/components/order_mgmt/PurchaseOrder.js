@@ -209,7 +209,7 @@ function Order() {
                                     </FormControl><br /><br />
 
                                     <FormControl fullWidth>
-                                        <Button type="button" size="medium" variant="contained" color="warning" sx={{ width: '20%', marginLeft: 60 }} onClick= {()=>{getTotalValue()}}>CALCULATE</Button>
+                                        <Button type="button" size="medium" variant="contained" color="warning" sx={{ width: '20%', marginLeft: 60 }}>CALCULATE</Button>
                                     </FormControl><br /><br />
 
                                     <FormControl fullWidth>
