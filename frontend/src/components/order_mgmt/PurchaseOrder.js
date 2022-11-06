@@ -111,13 +111,23 @@ function Order() {
 
     }
 
+    // const getTotalValue = () =>{
+    //     axios.post('http://localhost:4000/order/count')
+    //     .then((data)=>{
+    //         console.log(data);
+    //     })
+    //     .catch((err)=>{
+    //         console.log(err);
+    //     })
+    // }
+
     return (
         <diV>
 
             <Stack direction={'row'} flex={1} sx={{ marginTop: 10 }}>
                 <Stack direction={'col'} flex={1}></Stack>
                 <Stack direction={'col'}>
-                    <Paper variant="elevation" sx={{ padding: '20px', backgroundColor: 'whitesmoke' }} >
+                    <Paper variant="elevation" sx={{ padding: '40px', backgroundColor: 'whitesmoke' }} >
                         <Stack spacing={2} direction={'row'}>
                             <h2 style={{ fontFamily: 'sans-serif', color: 'black' }}>PURCHASE ORDER</h2>
                         </Stack><br />
@@ -208,12 +218,12 @@ function Order() {
                                         </Stack>
                                     </FormControl><br /><br />
 
-                                    <FormControl fullWidth>
-                                        <Button type="button" size="medium" variant="contained" color="warning" sx={{ width: '20%', marginLeft: 60 }}>CALCULATE</Button>
-                                    </FormControl><br /><br />
+                                    {/* <FormControl fullWidth>
+                                        <Button type="button" size="medium" variant="contained" color="warning" sx={{ width: '20%', marginLeft: 60 }} onClick={()=>getTotalValue()}>CALCULATE</Button>
+                                    </FormControl><br /><br /> */}
 
                                     <FormControl fullWidth>
-                                        <Stack direction={'row'}>
+                                        <Stack direction={'row'} mt={5}>
                                             <TextField
                                                 id="note"
                                                 label="Note"

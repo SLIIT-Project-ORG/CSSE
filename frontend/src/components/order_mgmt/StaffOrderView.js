@@ -26,13 +26,27 @@ export default function StaffOrderView() {
             })
     }, []);
 
+    const approveOrder = (id)=>{
+        axios.put(`http://localhost:4000/order/setStatus/${id}/approved/pending`)
+        .then((res)=>{
+            alert(res.data);
+        })
+    }
+
+    const rejectOrder = (id)=>{
+        axios.put(`http://localhost:4000/order/setStatus/${id}/rejected/pending`)
+        .then((res)=>{
+            alert(res.data);
+        })
+    }
+
     return (
         <div>
             <Paper variant='outlined' sx={{ width: 1200, height: 400, margin: 'auto', marginTop: 10 }}>
-                <Box sx={{ width: 1200, height: 400}}>
-                <h2 style={{ fontFamily: 'sans-serif' }}>STAFF ORDER VIEW</h2>
+                <Box sx={{ width: 1200, height: 400 ,backgroundColor:'whitesmoke'}}>
+                <h2 style={{ fontFamily: 'sans-serif', fontWeight:"bold" ,color:'darkblue'}}>STAFF ORDER VIEW</h2>
                 <TableContainer component={Paper} onScroll>
-                    <Table sx={{ minWidth: 1300 }} aria-label="simple table">
+                    <Table sx={{ minWidth: 1300 }} aria-label="simple table"  >
                         <TableHead sx={{ backgroundColor: 'black', color: 'white', fontWeight: 'bold', width: 800 }}>
                             <TableRow>
                                 <TableCell sx={{ color: 'white', fontWeight: 'bold' }}>MANAGER</TableCell>
@@ -50,18 +64,18 @@ export default function StaffOrderView() {
 
                                 <TableRow
                                     key={row.name}
-                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } , backgroundColor:'whitesmoke'}}
                                 >
                                     <TableCell>{row.siteManagerId}</TableCell>
-                                    <TableCell>{row.site_id}</TableCell>
+                                    <TableCell>{row.siteId}</TableCell>
                                     <TableCell>{row.supplierId}</TableCell>
                                     <TableCell>{row.note}</TableCell>
                                     <TableCell>{row.totalAmount}</TableCell>
                                     <TableCell>{row.staffStatus}</TableCell>
                                     <TableCell>{row.supplierStatus}</TableCell>
                                     <TableCell>
-                                        <Button startIcon={<DoneAllIcon />} size={'small'} variant='contained' color='success'>Approve</Button>
-                                        <Button startIcon={<RemoveDoneSharpIcon />} size={'small'} variant='contained' color='error'>Reject</Button>
+                                        <Button startIcon={<DoneAllIcon />} size={'small'} variant='contained' color='success' onClick={()=> approveOrder(row._id)}>Approve</Button>
+                                        <Button startIcon={<RemoveDoneSharpIcon />} size={'small'} variant='contained' color='error' onClick={()=>rejectOrder(row._id)}>Reject</Button>
                                     </TableCell>
                                 </TableRow>
                             ))}

@@ -18,6 +18,7 @@ import Dashboard from './components/user_mgmt/Dashboard';
 import StaffOrderView from './components/order_mgmt/StaffOrderView';
 import Order from './components/order_mgmt/PurchaseOrder';
 import Admin from './components/user_mgmt/Admin';
+import { OrderDashboard } from './components/order_mgmt/OrderDashboard';
 
 function App() {
   return (
@@ -51,11 +52,12 @@ function App() {
           {/* <Route path='/updateinventry' element={<UpdateInventry />}></Route> */}
           {/* <Route path='/item' element={<Item />}></Route> */}
           {/* <Route path='/updateitem' element={<UpdateItem />}></Route> */}
-          <Route path='/staffOrderView' element={<StaffOrderView />}></Route>
-          <Route path='/updateorder' element={<UpdateOrder />}></Route>
+          <Route path='/order/staffOrderView' element={<StaffOrderView />}></Route>
+          <Route path='/order/updateorder' element={<UpdateOrder />}></Route>
           <Route path='/siteManagerOrderView' element={<SiteManagerOrderView />}></Route>
           <Route path='/viewinventry' element={<ViewInventry />}></Route>
-          <Route path='/purchaseOrder' element={<Order/>}></Route>
+          <Route path='/order/purchaseOrder' element={<Order/>}></Route>
+          <Route path="/order" element={<OrderDashboard/>}></Route>
 
           <Route path='/' element={<ResponsiveAppBar />}></Route>
           <Route path='/admindashboard' element={<Admin />}></Route>

@@ -51,21 +51,21 @@ router.route("/:id").get(async (req, res) => {
         })
 })
 
-router.route("/count").post(async (req, res) => {
+// router.route("/count").post(async (req, res) => {
 
-    let obj = req.body.items;
-    let totalItem = 0;
-    let len = obj.length;
-    let totalAmount = 0;
+//     let obj = req.body.items;
+//     let totalItem = 0;
+//     let len = obj.length;
+//     let totalAmount = 0;
 
-    for (var i = 0; i < len; i++) {
-        totalItem = totalItem + obj[i].quantity;
-        totalAmount = totalAmount + (obj[i].item_price * obj[i].quantity);
-    }
-    console.log("Count " + totalItem);
-    console.log("totalAmount : " + totalAmount);
-    res.json({ "totalItems": totalItem,"totalAmount":totalAmount});
-})
+//     for (var i = 0; i < len; i++) {
+//         totalItem = totalItem + obj[i].quantity;
+//         totalAmount = totalAmount + (obj[i].item_price * obj[i].quantity);
+//     }
+//     console.log("Count " + totalItem);
+//     console.log("totalAmount : " + totalAmount);
+//     res.json({ "totalItems": totalItem,"totalAmount":totalAmount});
+// })
 
 router.route("/setStatus/:id/:staffStatus/:supplierStatus").put(async (req, res) => {
 
@@ -158,5 +158,11 @@ router.route("/getBySupplierStatusAndStaffStatus/:supplierStatus/:staffStatus").
 //             console.log(err);
 //         })
 // })
+
+router.route("/:id").delete((req,res)=>{
+
+    
+
+})
 
 module.exports = router;
