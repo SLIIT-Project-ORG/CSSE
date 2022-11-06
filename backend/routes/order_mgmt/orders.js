@@ -7,7 +7,7 @@ router.route("/create").post(async (req, res) => {
 
     const orderReq = req.body;
 
-    if (orderReq.siteId != null && orderReq.siteManagerId != null && orderReq.wareHouseId != null) {
+    if (orderReq.siteId != "" && orderReq.siteManagerId != "") {
 
         let total = parseFloat(orderReq.totalAmount);
 
@@ -56,12 +56,15 @@ router.route("/count").post(async (req, res) => {
     let obj = req.body.items;
     let totalItem = 0;
     let len = obj.length;
+    let totalAmount = 0;
 
     for (var i = 0; i < len; i++) {
         totalItem = totalItem + obj[i].quantity;
+        totalAmount = totalAmount + (obj[i].item_price * obj[i].quantity);
     }
     console.log("Count " + totalItem);
-    res.json({ "totalItems": totalItem });
+    console.log("totalAmount : " + totalAmount);
+    res.json({ "totalItems": totalItem,"totalAmount":totalAmount});
 })
 
 router.route("/setStatus/:id/:staffStatus/:supplierStatus").put(async (req, res) => {
@@ -135,22 +138,24 @@ router.route("/getBySupplierStatusAndStaffStatus/:supplierStatus/:staffStatus").
 
 // router.route("/orderWithIdData").get(async (req, res) => {
 
-//     const user = [];
-//     const site = [];
+//     const user = null;
+//     const site = null;
+//     const supplier = null;
 
 //     Order.find()
 //         .then(async(data) => {
 
-//             data.forEach(d => {
-//                 // user.push(User.findOne({userid:d.siteManagerId}));
-//                 site.push(Site.findOne({site_id:d.siteId}));
+//             data.map((val,ind) => {
+//                 user = User.findOne({_id:val.siteManagerId});
+//                 site = Site.findOne({_id:val.siteId});
+//                 supplier = User.findOne({_id:val.supplierId});
 //             });
 
-//             res.json({ data: data,user:user,site:site});
+//             res.json({ data: data,user:user,site:site,supplier:supplier});
 //             console.log({ data: data });
 //         }).catch((err) => {
-//             res.json(err.message);
-//             console.log(err.message);
+//             res.json(err);
+//             console.log(err);
 //         })
 // })
 

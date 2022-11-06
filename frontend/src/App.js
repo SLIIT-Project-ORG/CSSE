@@ -15,34 +15,36 @@ import UpdateSiteDetails from './components/site_mgmt/UpdateSiteDetails';
 import InvoiceManagement from './components/Invoice_mgmt/ManageInvoice';
 import Dashboard from './components/user_mgmt/Dashboard';
 import StaffOrderView from './components/order_mgmt/StaffOrderView';
+import Order from './components/order_mgmt/PurchaseOrder';
 
 function App() {
   return (
     <div className="App">
-        {
-          localStorage.token ? <Dashboard/>:<SignIn/>    
-        }
       <Router>
+        {/* {
+          localStorage.token ? <Dashboard /> : <SignIn />
+        } */}
         <Routes>
-       
-        {/* <Route path='/' element={<ResponsiveAppBar />}></Route> */}
-        <Route path='/signin' element={<SignIn />}></Route>
-        <Route path='/signup' element={<SignUp />}></Route>
-        <Route path='/inventry' element={<Inventry />}></Route>
-        {/* <Route path='/warehouse' element={<WareHouse />}></Route> */}
-        <Route path='/viewinventry' element={<ViewInventry />}></Route>
-        {/* <Route path='/wmanagement' element={<WManagement />}></Route> */}
-        {/* <Route path='/updatewmanagement/:id' element={<UpdateWManagement />}></Route> */}
-        
+
+          <Route path='/' element={<ResponsiveAppBar />}></Route>
+          <Route path='/signin' element={<SignIn />}></Route>
+          <Route path='/signup' element={<SignUp />}></Route>
+          <Route path='/inventry' element={<Inventry />}></Route>
+          {/* <Route path='/warehouse' element={<WareHouse />}></Route> */}
+          <Route path='/viewinventry' element={<ViewInventry />}></Route>
+          {/* <Route path='/wmanagement' element={<WManagement />}></Route> */}
+          {/* <Route path='/updatewmanagement/:id' element={<UpdateWManagement />}></Route> */}
+
           <Route path='/updateorder' element={<UpdateOrder />}></Route>
-         
+
           {/* <Route path='/updateinventry' element={<UpdateInventry />}></Route> */}
           {/* <Route path='/item' element={<Item />}></Route> */}
           {/* <Route path='/updateitem' element={<UpdateItem />}></Route> */}
           <Route path='/staffOrderView' element={<StaffOrderView />}></Route>
           <Route path='/updateorder' element={<UpdateOrder />}></Route>
-          <Route path='/siteManagerOrderView' element={<SiteManagerOrderView/>}></Route>
+          <Route path='/siteManagerOrderView' element={<SiteManagerOrderView />}></Route>
           <Route path='/viewinventry' element={<ViewInventry />}></Route>
+          <Route path='/purchaseOrder' element={<Order/>}></Route>
 
         </Routes>
       </Router>

@@ -5,7 +5,7 @@ const orderSchema = new Schema({
 
     siteId:{
         type:String,
-        required:true
+        requred:true
     },
     supplierId:{
         type:String,
@@ -20,7 +20,8 @@ const orderSchema = new Schema({
         required:true
     },
     note:{
-        type:String
+        type:String,
+        required:true
     },
     staffStatus:{
         type:String,
@@ -31,8 +32,10 @@ const orderSchema = new Schema({
         default:"pending"
     },
     totalAmount:{
-        type:String,
-        required:true
+        type:String
+    },
+    date:{
+        type:Date
     },
     createdAt:{
         type:Date,
