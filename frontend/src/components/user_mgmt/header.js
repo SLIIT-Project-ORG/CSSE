@@ -1,185 +1,73 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import { BottomNavigation } from '@mui/material';
-import HomeImage from '../../images/home.png'
+import React from "react";
+import '../../styles/Header.css'
+import  HomeImage from '../../images/home.png'
 import HomeImage1 from '../../images/home1.png'
-import { Stack } from '@mui/system';
-import Footer from './Footer';
-
-const pages = ['Contact', 'AboutUs', 'Login'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
+import { Stack } from "@mui/system";
+import Footer from "./Footer";
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+    const logOut = ()=>{
+      localStorage.removeItem("token");
+      window.location.href = "/";
+    }
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  return (
-    <Stack>
-    <AppBar position="static" sx={{backgroundColor:'darkblue'}}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters >
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 500,
-              letterSpacing: '.1rem',
-              color: 'inherit',
-              textDecoration: 'none',
-              
-            }}
-          >
-            Procument Management System
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-              
-             
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-                
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} >
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 4,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-             
-              
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-        </Toolbar>
-      </Container>
+    return (
+        <div className="header"  >
+        
+        {/*---- Include the above in your HEAD tag --------*/}
+        
+        {/* Navigation */}
+        <div className="fixed-top">
       
-    </AppBar>
-    
-    <img src={HomeImage} width="880px" height='600px' marginTop='5'/>
-    <Stack style={{marginLeft:'700px' ,marginTop:'-600px'}}>
-    <img src={HomeImage1}   width="835px" height='600px'  />
-    </Stack>
-   <Footer/>
-    </Stack>
-   
-   
+          <nav className="navbar navbar-expand-lg navbar-dark mx-background-top-linear w-100 p-2">
+            <div className="container">
+              <a className="navbar-brand" rel="nofollow" target="_blank" href="#" style={{textTransform: 'uppercase'}}>XPERTS
+              </a>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon" />
+              </button>
+              <div className="collapse navbar-collapse" id="navbarResponsive" >
+                <ul className="navbar-nav ml-auto">
+                  <li className="nav-item active" style={{marginLeft:"750px"}}>
+                    <a  className="nav-link" href="/">Home</a>
+                  </li>
+                  <li className="nav-item">
+                    <a    className="nav-link" href="/signin">Signin</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/">About Us</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/">About Us</a>
+                  </li>
 
-  );
+                  <li className="nav-item">
+                    <button type="submit" onClick={()=>logOut()}>Logout</button>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </nav>
+         
+    
+       
+ 
+
+      
+      
+    
+       </div>
+       <Stack>
+        <img src={HomeImage1}    style={{marginLeft:'800',height:'800px'   }}  />
+        <Footer/>
+       
+        </Stack>
+       </div>
+      
+    );
 }
-export default ResponsiveAppBar;
+export default ResponsiveAppBar; 
+  
+
+  

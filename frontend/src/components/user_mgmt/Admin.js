@@ -19,10 +19,10 @@ export default function Admin() {
                     <div className="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box " id="navigation"  >
                        
                       
-                        <div  className="navi" >
+                        <div  className="navi" style={{height:'100vh'}} >
                             <ul >
                                 <li ><a href="/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Staff Management</span></a></li>
-                                <li><a href="/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
+                                <li><a href="/order"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
                                 <li><a href="/warehouse"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;WareHouse Management</span></a></li>
                                 <li><a href="/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Item Management</span></a></li>
                                 <li><a href="/inventry"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Inventry Management</span></a></li>

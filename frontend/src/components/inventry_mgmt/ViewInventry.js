@@ -22,7 +22,7 @@ return (
             </Stack>
             <Stack spacing={1} >
 
-                <Button type="submit" size="medium" variant="contained" color='warning' sx={{ width: '15%', marginLeft: 120, marginTop:2 }} onClick={() => window.location.href = "/warehouse"}>Back</Button>
+                <Button type="submit" size="medium" variant="contained" color='warning' sx={{ width: '15%', marginLeft: 120, marginTop:2 }} onClick={() => window.location.href = "/inventry"}>Back</Button>
             </Stack>
 
 
