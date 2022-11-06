@@ -39,7 +39,7 @@ function App() {
         {/* <Route path='/updatewmanagement/:id' element={<UpdateWManagement />}></Route> */}
         
           
-          <Route path='/order' element={<Order />}></Route>
+          {/* <Route path='/order' element={<Order />}></Route> */}
 
           <Route path='/updateorder' element={<UpdateOrder />}></Route>
          
