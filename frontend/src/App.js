@@ -18,11 +18,19 @@ import Dashboard from './components/user_mgmt/Dashboard';
 import StaffOrderView from './components/order_mgmt/StaffOrderView';
 import Order from './components/order_mgmt/PurchaseOrder';
 import Admin from './components/user_mgmt/Admin';
+
 import { OrderDashboard } from './components/order_mgmt/OrderDashboard';
+import WManagement from './components/inventry_mgmt/WareHouseManagement';
+import UpdateWManagement from './components/inventry_mgmt/UpdateWarehouse';
+import WareHouse from './components/inventry_mgmt/Warehouse';
+
 
 function App() {
   return (
     <div className="App">
+        {/* {
+          localStorage.token ? <Dashboard/>:<SignIn/>    
+        } */}
       <Router>
         {/* {
           localStorage.token ? <Dashboard /> : <SignIn />
@@ -38,14 +46,26 @@ function App() {
           {/* <Route path='/wmanagement' element={<WManagement />}></Route> */}
           {/* <Route path='/updatewmanagement/:id' element={<UpdateWManagement />}></Route> */}
        
+        <Route path='/' element={<ResponsiveAppBar />}></Route> 
+        <Route path='/signin' element={<SignIn />}></Route>
+        <Route path='/signup' element={<SignUp />}></Route>
+        <Route path='/inventry' element={<Inventry />}></Route>
+        <Route path='/inventry' element={<ViewInventry />}></Route>
+        <Route path='/warehouse' element={<WareHouse />}></Route>
+      
         {/* <Route path='/' element={<ResponsiveAppBar />}></Route> */}
         {/* <Route path='/warehouse' element={<WareHouse />}></Route> */}
+
         <Route path='/viewinventry' element={<ViewInventry />}></Route>
-        {/* <Route path='/wmanagement' element={<WManagement />}></Route> */}
-        {/* <Route path='/updatewmanagement/:id' element={<UpdateWManagement />}></Route> */}
+        <Route path='/WManagement' element={<WManagement />}></Route> 
+        <Route path='/updatewmanagement/:id' element={<UpdateWManagement />}></Route>
         
           
-          {/* <Route path='/order' element={<Order />}></Route> */}
+           {/* <Route path='/order' element={<Order />}></Route>  */}
+
+          <Route path='/updateorder' element={<UpdateOrder />}></Route> 
+           {/* <Route path='/item' element={<Item />}></Route> 
+          <Route path='/updateitem' element={<UpdateItem />}></Route> */}
 
           <Route path='/updateorder' element={<UpdateOrder />}></Route>
 
@@ -54,6 +74,9 @@ function App() {
           {/* <Route path='/updateitem' element={<UpdateItem />}></Route> */}
           <Route path='/order/staffOrderView' element={<StaffOrderView />}></Route>
           <Route path='/order/updateorder' element={<UpdateOrder />}></Route>
+
+          <Route path='/staffOrderView' element={<StaffOrderView />}></Route>
+          <Route path='/updateorder' element={<UpdateOrder />}></Route>
           <Route path='/siteManagerOrderView' element={<SiteManagerOrderView />}></Route>
           <Route path='/viewinventry' element={<ViewInventry />}></Route>
           <Route path='/order/purchaseOrder' element={<Order/>}></Route>

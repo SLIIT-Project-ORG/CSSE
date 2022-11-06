@@ -60,11 +60,11 @@ export default function SignIn() {
             window.location.href = "/admindashboard";
           }
           else if (res.data.usertype === "Staff") {
-            window.location.href = "/staffdashboard";
+            window.location.href = "/admindashboard";
           } else if (res.data.usertype === "SiteManager") {
-            window.location.href = "/sitemanagerdashboard";
+            window.location.href = "/admindashboard";
           } else {
-            window.location.href = "/supplierdashboard";
+            window.location.href = "/admindashboard";
           }
         }else {
           window.location.href = "/login";
